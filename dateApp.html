@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Night</title>
+        <link rel="stylesheet" href="dateApp.css">
+    </head>
+
+    <div class="header">
+        <h1> Welcome to Date Night </h1>
+        <p>Having trouble deciding what to do tonight? Add some date ideas and a random option will be displayed.</p>
+    </div>
+
+    <div class="loginForm" id="loginForm">
+        <label> Email </label>
+        <input id="loginEmail" type="text">
+        <br>
+        <br>
+        <label> Password </label>
+        <input id="loginPassword" type="text">
+        <br>
+        <br>
+        <button id="loginButton">Login</button>
+        <button id="register">Register</button>
+
+        <h4 id="loginStatus"> </h4>
+    </div>  
+
+    <br>
+    <br>
+
+    <div class="registerForm" id="registerForm">
+        <label> First Name</label>
+        <input id="firstName" type="text">
+        <br>
+        <br>
+        <label> Last Name</label>
+        <input id="lastName" type="text">
+        <br>
+        <br>
+        <label> Email </label>
+        <input id="registerEmail" type="text">
+        <br>
+        <br>
+        <label> Password </label>
+        <input id="registerPassword" type="text">
+        <br>
+        <br>
+        <br>
+        <button id="registerSubmit">Submit</button>
+        <h4 id="registerStatus"> </h4>
+
+    </div>
+
+
+    <div id="dataField">
+
+    <body class="wholePage">
+
+        <div class="form_field">
+
+            <h2 id ="formHeader"> Please add a date below </h2>
+
+            <label>Date Name: </label>
+            <input  id="dateName" type="text">
+            <br>
+            <br>
+
+            <label>Length of Date: </label>
+             <input  id="lengthOfTime" type="text">
+            <br>
+            <br>
+
+            <label>Cost:</label>
+            <input  id="cost" type="number" min="0.01" step="0.01">
+            <br>
+            <br>
+
+            <label>Fun Factor:</label>
+            <input  id="funFactor" type="number" step= "1" min="1" max="10" value="1">
+            <br>
+            <br>
+            <label> Season </label>
+            <select id="selectId">
+                <option value="empty" disabled="disabled" selected="selected">Please select a season</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+                <option value="Winter">Winter</option>
+                <option value="any">Any</option>
+            </select>
+            
+            <br>
+            <br>
+
+            <button id="addButton">Add</button>
+            <br>
+            <button id="editButton" style="visibility:hidden" > Submit Changes</button>
+            <br>
+            <br>
+            <h2 id="errorMessage"> </h2>
+
+        </div>
+
+        <div class="display_field">
+            <h2> Current List of Dates </h2>
+            <ol id="listOfDates"
+            </ol>
+        </div>
+
+        <script type="text/javascript" src="dateApp.js"></script>
+    </body>
+    </div>
+</html>
