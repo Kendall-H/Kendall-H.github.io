@@ -70,7 +70,7 @@ addNewUserButton.onclick = function () {
     bodyStr += "&" + "password=" + encodeURIComponent(registerPassword);
     console.log(bodyStr)
 
-    fetch("URLString" + "/users/", {
+    fetch(URLString + "/users/", {
         method: "POST",
         credentials: "include",
         body: bodyStr,
