@@ -1,5 +1,8 @@
+
+var URLString = "https://murmuring-atoll-12351.herokuapp.com"
+
 function loadAll() {
-    fetch("http://localhost:8080/dates", {
+    fetch("URLString/dates", {
         method: "GET",
         credentials: "include",
         }).then(function(response) {
@@ -26,7 +29,7 @@ loginButton.onclick = function () {
     var bodyStr = "email=" + encodeURIComponent(loginEmail);
     bodyStr += "&" + "password=" + encodeURIComponent(loginPassword);
 
-    fetch("http://localhost:8080/sessions" , {
+    fetch("URLString/sessions" , {
         method: "POST",
         credentials: "include",
         body: bodyStr,
@@ -67,7 +70,7 @@ addNewUserButton.onclick = function () {
     bodyStr += "&" + "password=" + encodeURIComponent(registerPassword);
     console.log(bodyStr)
 
-    fetch("http://localhost:8080/users/", {
+    fetch("URLString/users/", {
         method: "POST",
         credentials: "include",
         body: bodyStr,
@@ -88,7 +91,7 @@ addNewUserButton.onclick = function () {
 }
 
 var getDates = function () {
-    fetch("http://localhost:8080/dates", {
+    fetch("URLString/dates", {
         method: "GET",
         credentials: "include",
     }).then(function(response) {
@@ -201,7 +204,7 @@ addButton.onclick = function () {
         bodyStr += "&" + "fun_factor=" + encodeURIComponent(newDateFunFactor);
         console.log(bodyStr)
 
-        fetch("http://localhost:8080/dates",{
+        fetch("URLString/dates",{
             method: "POST",
             credentials: "include",
             body: bodyStr,
@@ -226,7 +229,7 @@ addButton.onclick = function () {
 
 var deleteDate = function(dateId) {
     
-    fetch("http://localhost:8080/dates/" + dateId, {
+    fetch("URLString/dates/" + dateId, {
         method: "DELETE",
         credentials: "include"
     }).then(function (response) {
@@ -250,7 +253,7 @@ var editDate = function(dateId) {
     bodyStr += "&" + "season=" + encodeURIComponent(newDateSeason);
     bodyStr += "&" + "fun_factor=" + encodeURIComponent(newDateFunFactor);
 
-    fetch("http://localhost:8080/dates/" + dateId, {
+    fetch("URLString/dates/" + dateId, {
         method: "PUT",
         credentials: "include",
         body: bodyStr,
