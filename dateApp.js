@@ -2,7 +2,7 @@
 var URLString = "https://murmuring-atoll-12351.herokuapp.com"
 
 function loadAll() {
-    fetch("URLString/dates", {
+    fetch(URLString + "/dates", {
         method: "GET",
         credentials: "include",
         }).then(function(response) {
@@ -29,7 +29,7 @@ loginButton.onclick = function () {
     var bodyStr = "email=" + encodeURIComponent(loginEmail);
     bodyStr += "&" + "password=" + encodeURIComponent(loginPassword);
 
-    fetch("URLString/sessions" , {
+    fetch(URLString + "/sessions" , {
         method: "POST",
         credentials: "include",
         body: bodyStr,
@@ -83,6 +83,7 @@ addNewUserButton.onclick = function () {
             document.querySelector("#registerStatus").textContent = "User created";
             document.getElementById("loginForm").style.display = "block";
             document.getElementById("registerForm").style.display = "none";
+            document.querySelector("#loginStatus").textContent = "User created!"
         } else {
             document.querySelector("#registerStatus").textContent = "User already exists";
         }
@@ -91,7 +92,7 @@ addNewUserButton.onclick = function () {
 }
 
 var getDates = function () {
-    fetch("URLString/dates", {
+    fetch(URLString + "/dates", {
         method: "GET",
         credentials: "include",
     }).then(function(response) {
@@ -204,7 +205,7 @@ addButton.onclick = function () {
         bodyStr += "&" + "fun_factor=" + encodeURIComponent(newDateFunFactor);
         console.log(bodyStr)
 
-        fetch("URLString/dates",{
+        fetch(URLString + "/dates",{
             method: "POST",
             credentials: "include",
             body: bodyStr,
@@ -229,7 +230,7 @@ addButton.onclick = function () {
 
 var deleteDate = function(dateId) {
     
-    fetch("URLString/dates/" + dateId, {
+    fetch(URLString + "/dates/" + dateId, {
         method: "DELETE",
         credentials: "include"
     }).then(function (response) {
@@ -253,7 +254,7 @@ var editDate = function(dateId) {
     bodyStr += "&" + "season=" + encodeURIComponent(newDateSeason);
     bodyStr += "&" + "fun_factor=" + encodeURIComponent(newDateFunFactor);
 
-    fetch("URLString/dates/" + dateId, {
+    fetch(URLString + "/dates/" + dateId, {
         method: "PUT",
         credentials: "include",
         body: bodyStr,
